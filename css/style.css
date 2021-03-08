@@ -23,6 +23,7 @@ body{
 .header_area ul li{
 	list-style-type: none;
 	display: inline-block;
+	position: relative;
 }
 .arrow_icon{
 	font-size: 13px;
@@ -36,7 +37,7 @@ body{
 	transition: .3s;
 }
 
-.header_area ul li a:hover{
+.header_area ul li:hover > a{
 	color: black;
 }
 
@@ -44,3 +45,92 @@ body{
 	float: right;
 }
 
+/* Sub menu */
+
+.header_area ul li ul.submenu{
+	position: absolute;
+	background-color:black;
+	top: 100%;
+	margin: 0px;
+	width: 180px;
+	padding: 18px;
+	border-radius: 5px;
+	box-shadow: 1px 1px 1px gray;
+	opacity: 0;
+	visibility: hidden;
+	transition: .3s;
+	top: 110%;
+}
+.header_area ul li ul.submenu li{
+	display: block;
+	border-bottom: 1px solid #888;
+}
+.header_area ul li:hover ul.submenu{
+	opacity: 1;
+	visibility: visible;
+	top: 100%;
+}
+.header_area ul li ul.submenu li a{
+	padding: 10px 0px;
+}
+.header_area ul li ul.submenu li:hover > a{
+	color: white;
+}
+
+.header_area ul li ul.submenu li:last-child{
+	border-bottom: none;
+}
+
+.header_area ul li ul.submenu li:last-child a{
+	padding-bottom: 0px;
+}
+
+.header_area ul li ul.submenu li:first-child a{
+	padding-top: 0px;
+}
+
+/* Meag Menu */
+
+.header_area .meag_menu{
+	width: 700px;
+	background-color: black;
+	position: absolute;
+	padding: 20px;
+	visibility: hidden;
+	opacity: 0;
+	transition: .3s;
+	top: 110%;
+	border-radius: 5px;
+}
+
+.header_area li:hover > .meag_menu{
+	visibility: visible;
+	opacity: 1;
+	top: 100%;
+}
+
+.header_area .meag_menu ul{
+	width: 25%;
+	float: left;
+	padding: 0px 15px;
+	margin: 0px;
+}
+
+.header_area .meag_menu ul li.meag_title{
+	color: white;
+	font-size: 15px;
+	border-bottom: 2px solid gray;
+	margin-bottom: 15px;
+	padding-bottom: 5px;
+}
+.header_area .meag_menu ul li{
+	display: block;
+}
+.header_area .meag_menu ul li a{
+	padding: 8px 0px 8px 0px;
+	display: block;
+}
+
+.header_area .meag_menu ul li a:hover{
+	color: white;
+}
